@@ -60,6 +60,10 @@ Robot
       since it is facing WEST at WEST edge 0,3
       since it is facing WEST at WEST edge 0,4
 
+RunRobot
+  #new
+    returns a RunRobot object
+
 Square
   #new
     returns a square object
@@ -80,5 +84,5 @@ Tabletop
     square exists
       returns a square
 
-Finished in 0.00997 seconds
-52 examples, 0 failures
+Finished in 0.01047 seconds
+53 examples, 0 failures

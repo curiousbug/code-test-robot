@@ -1,4 +1,5 @@
 require_relative 'tabletop'
+require_relative 'square'
 
 class Robot
   def initialize tabletop
@@ -20,9 +21,9 @@ class Robot
   end
 
   def place x, y, aspect
-    if (x < @tabletop.get_x_max()) && (y < @tabletop.get_y_max()) && (@compass.invert[aspect] != nil)
-      @location['x'] = x
-      @location['y'] = y
+    if (x.to_i < @tabletop.get_x_max()) && (y.to_i < @tabletop.get_y_max()) && (@compass.invert[aspect] != nil)
+      @location['x'] = x.to_i
+      @location['y'] = y.to_i
 
       @aspect = @compass.invert[aspect]
     else
@@ -39,6 +40,10 @@ class Robot
   end
 
   def left
+    if @aspect == nil
+      return
+    end
+
     @aspect -= 1
 
     if @aspect < 0
@@ -49,6 +54,10 @@ class Robot
   end
 
   def right
+    if @aspect == nil
+      return
+    end
+
     @aspect += 1
 
     if @aspect > 3
@@ -59,50 +68,54 @@ class Robot
   end
 
   def move
+    if @aspect == nil
+      return
+    end
+
     if @aspect == @compass.invert["NORTH"]
-      newLocation = {
+      new_location = {
         'x' => @location['x'],
         'y' => @location['y'] + 1,
       }
 
-      if @tabletop.get_square(newLocation['x'], newLocation['y'])
-        @location = newLocation
+      if @tabletop.get_square(new_location['x'], new_location['y'])
+        @location = new_location
       else
         return
       end
 
     elsif @aspect == @compass.invert["EAST"]
-      newLocation = {
+      new_location = {
         'x' => @location['x'] + 1,
         'y' => @location['y'],
       }
 
-      if @tabletop.get_square(newLocation['x'], newLocation['y'])
-        @location = newLocation
+      if @tabletop.get_square(new_location['x'], new_location['y'])
+        @location = new_location
       else
         return
       end
 
     elsif @aspect == @compass.invert["SOUTH"]
-      newLocation = {
+      new_location = {
         'x' => @location['x'],
         'y' => @location['y'] - 1,
       }
 
-      if @tabletop.get_square(newLocation['x'], newLocation['y'])
-        @location = newLocation
+      if @tabletop.get_square(new_location['x'], new_location['y'])
+        @location = new_location
       else
         return
       end
 
     elsif @aspect == @compass.invert["WEST"]
-      newLocation = {
+      new_location = {
         'x' => @location['x'] - 1,
         'y' => @location['y'] ,
       }
 
-      if @tabletop.get_square(newLocation['x'], newLocation['y'])
-        @location = newLocation
+      if @tabletop.get_square(new_location['x'], new_location['y'])
+        @location = new_location
       else
         return
       end

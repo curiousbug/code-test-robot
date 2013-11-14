@@ -1,3 +1,5 @@
+require_relative 'square'
+
 class Tabletop
   def initialize xMax, yMax
     #the minimum size of tabletop to be created will be 1 x 1

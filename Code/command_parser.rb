@@ -2,6 +2,10 @@ class CommandParser
   def initialize filename
     @command_list = Array.new
 
+    if !File.exist?(filename)
+      return
+    end
+
     File.open filename, "r" do |f|
       while line = f.gets
         new_command = is_move_command(line) ||
@@ -9,9 +13,10 @@ class CommandParser
                       is_right_command(line) ||
                       is_report_command(line) ||
                       is_place_command(line)
-
+p line
+p new_command
         if new_command
-          @command_list << new_command.to_s.gsub("\n", "")
+          @command_list << line.to_s.gsub("\n", "")
         else
           @command_list = nil
           return
@@ -45,7 +50,7 @@ class CommandParser
   end
 
   def is_place_command command
-    command.to_s.match(/PLACE [0-9]+, [0-9]+, NORTH$|EAST$|SOUTH$|WEST$/)
+    command.to_s.match(/PLACE [0-9]+, [0-9]+, (?:NORTH|EAST|SOUTH|WEST)$/)
   end
 
   private  :is_move_command,
