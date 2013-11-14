@@ -20,6 +20,11 @@ Robot
     turns robot right three times
     turns robot right four times
   #move
+    robot can move
+      moved to the NORTH
+      moved to the EAST
+      moved to the SOUTH
+      moved to the WEST
     robot cannot move
       since it is facing NORTH at NORTH edge 0,4
       since it is facing NORTH at NORTH edge 1,4
@@ -62,5 +67,5 @@ Tabletop
     valid square
       returns a square
 
-Finished in 0.01184 seconds
-41 examples, 0 failures
+Finished in 0.01204 seconds
+45 examples, 0 failures

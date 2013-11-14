@@ -103,6 +103,32 @@ describe Robot do
   end
 
   describe "#move" do
+    context "robot can move" do
+      it "moved to the NORTH" do
+        @robot.place(0, 0, "NORTH")
+        @robot.move
+        @robot.report.should eql "Output: 0, 1, NORTH"
+      end
+
+      it "moved to the EAST" do
+        @robot.place(0, 0, "EAST")
+        @robot.move
+        @robot.report.should eql "Output: 1, 0, EAST"
+      end
+
+      it "moved to the SOUTH" do
+        @robot.place(4, 4, "SOUTH")
+        @robot.move
+        @robot.report.should eql "Output: 4, 3, SOUTH"
+      end
+
+      it "moved to the WEST" do
+        @robot.place(4, 4, "WEST")
+        @robot.move
+        @robot.report.should eql "Output: 3, 4, WEST"
+      end
+    end
+
     context "robot cannot move" do
       it "since it is facing NORTH at NORTH edge 0,4" do
         @robot.place(0, 4, "NORTH")
