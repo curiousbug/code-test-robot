@@ -1,13 +1,23 @@
 class Tabletop
   def initialize xMax, yMax
-    @xMax = xMax
-    @yMax = yMax
-    @tabletop = Array.new(@xMax) { Array.new(@yMax) }
+    #the minimum size of tabletop to be created will be 1 x 1
+    xMax = [xMax, 1].max
+    yMax = [yMax, 1].max
 
-    for x in 0..@xMax - 1
-      for y in 0..@yMax - 1
+    @tabletop = Array.new(xMax) { Array.new(yMax) }
+
+    for x in 0..xMax - 1
+      for y in 0..yMax - 1
         @tabletop[x][y] = Square.new
       end
     end
+  end
+
+  def get_x_max
+    @tabletop.length
+  end
+
+  def get_y_max
+    @tabletop[0].length
   end
 end
