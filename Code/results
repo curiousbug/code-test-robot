@@ -1,0 +1,26 @@
+
+Robot
+  #new
+    returns a Robot object
+  #report and #place
+    robot is off table:
+      robot has not been placed
+      robot has been placed in an invalid location
+    robot is on the table:
+      robot has been placed in a valid location
+      robot has been placed in an invalid location
+
+Square
+  #new
+    returns a square object
+
+Tabletop
+  #new
+    return a Tabletop object
+  #get_x_max
+    returns the number of squares along the x axis
+  #get_y_max
+    returns the number of squares along the y axis
+
+Finished in 0.00326 seconds
+9 examples, 0 failures
