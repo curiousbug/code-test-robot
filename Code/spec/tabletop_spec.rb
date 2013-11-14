@@ -24,17 +24,17 @@ describe Tabletop do
   end
 
   describe "#get_square" do
-    context "invalid square" do
-      it "returns null because a Square does not exist at 100, 100" do
+    context "square does not exist" do
+      it "returns nil because a Square does not exist at 100, 100" do
         @tabletop.get_square(100, 100).should eql nil
       end
 
-      it "returns null because a Square does not exist at -1, -1" do
+      it "returns nil because a Square does not exist at -1, -1" do
         @tabletop.get_square(-1, -1).should eql nil
       end
     end
 
-    context "valid square" do
+    context "square exists" do
       it "returns a square" do
         @tabletop.get_square(0,0).should be_an_instance_of Square
       end

@@ -61,11 +61,11 @@ Tabletop
   #get_y_max
     returns the number of squares along the y axis
   #get_square
-    invalid square
-      returns null because a Square does not exist at 100, 100
-      returns null because a Square does not exist at -1, -1
-    valid square
+    square does not exist
+      returns nil because a Square does not exist at 100, 100
+      returns nil because a Square does not exist at -1, -1
+    square exists
       returns a square
 
-Finished in 0.01204 seconds
+Finished in 0.01198 seconds
 45 examples, 0 failures
