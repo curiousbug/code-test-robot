@@ -23,6 +23,11 @@ Tabletop
     returns the number of squares along the x axis
   #get_y_max
     returns the number of squares along the y axis
+  #get_square
+    invalid square
+      returns null because the square does not exist
+    valid square
+      returns a square
 
-Finished in 0.00321 seconds
-10 examples, 0 failures
+Finished in 0.00353 seconds
+12 examples, 0 failures

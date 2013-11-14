@@ -20,4 +20,12 @@ class Tabletop
   def get_y_max
     @tabletop[0].length
   end
+
+  def get_square x, y
+    if (x < get_x_max()) && (y < get_y_max())
+      @tabletop[x][y]
+    else
+      nil
+    end
+  end
 end
