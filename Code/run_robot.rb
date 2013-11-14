@@ -12,8 +12,9 @@ class RunRobot
   end
 
   def run_file filename
-    commands = CommandParser.new(filename)
+    puts "--- File " + filename + " ---"
 
+    commands = CommandParser.new(filename)
     command = commands.get_command
 
     while command
@@ -32,5 +33,7 @@ class RunRobot
 
       command = commands.get_command
     end
+
+    puts "--- End of " + filename + " ---"
   end
 end

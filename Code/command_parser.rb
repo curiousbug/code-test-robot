@@ -3,6 +3,7 @@ class CommandParser
     @command_list = Array.new
 
     if !File.exist?(filename)
+      puts "File " + filename + " was not found."
       return
     end
 
