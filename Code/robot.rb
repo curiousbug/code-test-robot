@@ -10,17 +10,17 @@ class Robot
     }
 
     @compass = {
-      :north => "NORTH",
-      :east => "EAST",
-      :south => "SOUTH",
-      :west => "WEST",
+      0 => "NORTH",
+      1 => "EAST",
+      2 => "SOUTH",
+      3 => "WEST",
     }
 
     @aspect = nil
   end
 
   def place x, y, aspect
-    if (x < @tabletop.get_x_max()) && (y < @tabletop.get_y_max()) && @compass.invert[aspect]
+    if (x < @tabletop.get_x_max()) && (y < @tabletop.get_y_max()) && (@compass.invert[aspect] != nil)
       @location['x'] = x
       @location['y'] = y
 
@@ -31,7 +31,7 @@ class Robot
   end
 
   def report
-    if @location['x'] && @location['y'] && @compass[@aspect]
+    if @location['x'] && @location['y'] && (@compass[@aspect] != nil)
       "Output: " + @location['x'].to_s() + ", " + @location['y'].to_s() + ", " + @compass[@aspect]
     else
       return ""
