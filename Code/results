@@ -1,4 +1,17 @@
 
+CommandParser
+  #new
+    returns a new CommandParser object reading from testfile1
+  #read
+    valid file format
+      reads a MOVE command
+      reads a LEFT command
+      reads a RIGHT command
+      reads a REPORT command
+      reads a PLACE command
+    invalid file format
+      returns nil for get_command because of invalid file format
+
 Robot
   #new
     returns a Robot object
@@ -67,5 +80,5 @@ Tabletop
     square exists
       returns a square
 
-Finished in 0.01198 seconds
-45 examples, 0 failures
+Finished in 0.00997 seconds
+52 examples, 0 failures
