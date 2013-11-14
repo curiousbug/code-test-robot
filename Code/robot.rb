@@ -21,7 +21,9 @@ class Robot
   end
 
   def place x, y, aspect
-    if (x.to_i < @tabletop.get_x_max()) && (y.to_i < @tabletop.get_y_max()) && (@compass.invert[aspect] != nil)
+    if (x.to_i < @tabletop.get_x_max()) && (x.to_i >= 0) &&
+       (y.to_i < @tabletop.get_y_max()) && (y.to_i >= 0) &&
+       (@compass.invert[aspect] != nil)
       @location['x'] = x.to_i
       @location['y'] = y.to_i
 
