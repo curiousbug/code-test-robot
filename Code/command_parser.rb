@@ -13,8 +13,7 @@ class CommandParser
                       is_right_command(line) ||
                       is_report_command(line) ||
                       is_place_command(line)
-p line
-p new_command
+
         if new_command
           @command_list << line.to_s.gsub("\n", "")
         else
