@@ -13,6 +13,8 @@ Robot
 Square
   #new
     returns a square object
+  #robot_can_occupy
+    returns true if the robot can occupy this square
 
 Tabletop
   #new
@@ -22,5 +24,5 @@ Tabletop
   #get_y_max
     returns the number of squares along the y axis
 
-Finished in 0.00326 seconds
-9 examples, 0 failures
+Finished in 0.00321 seconds
+10 examples, 0 failures
