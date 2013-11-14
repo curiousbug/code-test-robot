@@ -9,6 +9,38 @@ Robot
     robot is on the table:
       robot has been placed in a valid location
       robot has been placed in an invalid location
+  #left
+    turns robot left
+    turns robot left twice
+    turns robot left three times
+    turns robot left four times
+  #right
+    turns robot right
+    turns robot right twice
+    turns robot right three times
+    turns robot right four times
+  #move
+    robot cannot move
+      since it is facing NORTH at NORTH edge 0,4
+      since it is facing NORTH at NORTH edge 1,4
+      since it is facing NORTH at NORTH edge 2,4
+      since it is facing NORTH at NORTH edge 3,4
+      since it is facing NORTH at NORTH edge 4,4
+      since it is facing EAST at EAST edge 4,0
+      since it is facing EAST at EAST edge 4,1
+      since it is facing EAST at EAST edge 4,2
+      since it is facing EAST at EAST edge 4,3
+      since it is facing EAST at EAST edge 4,4
+      since it is facing SOUTH at SOUTH edge 0,0
+      since it is facing SOUTH at SOUTH edge 1,0
+      since it is facing SOUTH at SOUTH edge 2,0
+      since it is facing SOUTH at SOUTH edge 3,0
+      since it is facing SOUTH at SOUTH edge 4,0
+      since it is facing WEST at WEST edge 0,0
+      since it is facing WEST at WEST edge 0,1
+      since it is facing WEST at WEST edge 0,2
+      since it is facing WEST at WEST edge 0,3
+      since it is facing WEST at WEST edge 0,4
 
 Square
   #new
@@ -25,9 +57,10 @@ Tabletop
     returns the number of squares along the y axis
   #get_square
     invalid square
-      returns null because the square does not exist
+      returns null because a Square does not exist at 100, 100
+      returns null because a Square does not exist at -1, -1
     valid square
       returns a square
 
-Finished in 0.00362 seconds
-12 examples, 0 failures
+Finished in 0.01184 seconds
+41 examples, 0 failures

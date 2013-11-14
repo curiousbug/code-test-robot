@@ -37,4 +37,75 @@ class Robot
       return ""
     end
   end
+
+  def left
+    @aspect -= 1
+
+    if @aspect < 0
+      @aspect = 3
+    end
+
+    return
+  end
+
+  def right
+    @aspect += 1
+
+    if @aspect > 3
+      @aspect = 0
+    end
+
+    return
+  end
+
+  def move
+    if @aspect == @compass.invert["NORTH"]
+      newLocation = {
+        'x' => @location['x'],
+        'y' => @location['y'] + 1,
+      }
+
+      if @tabletop.get_square(newLocation['x'], newLocation['y'])
+        @location = newLocation
+      else
+        return
+      end
+
+    elsif @aspect == @compass.invert["EAST"]
+      newLocation = {
+        'x' => @location['x'] + 1,
+        'y' => @location['y'],
+      }
+
+      if @tabletop.get_square(newLocation['x'], newLocation['y'])
+        @location = newLocation
+      else
+        return
+      end
+
+    elsif @aspect == @compass.invert["SOUTH"]
+      newLocation = {
+        'x' => @location['x'],
+        'y' => @location['y'] - 1,
+      }
+
+      if @tabletop.get_square(newLocation['x'], newLocation['y'])
+        @location = newLocation
+      else
+        return
+      end
+
+    elsif @aspect == @compass.invert["WEST"]
+      newLocation = {
+        'x' => @location['x'] - 1,
+        'y' => @location['y'] ,
+      }
+
+      if @tabletop.get_square(newLocation['x'], newLocation['y'])
+        @location = newLocation
+      else
+        return
+      end
+    end
+  end
 end

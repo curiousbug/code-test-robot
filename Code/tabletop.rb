@@ -22,7 +22,7 @@ class Tabletop
   end
 
   def get_square x, y
-    if (x < get_x_max()) && (y < get_y_max())
+    if (x < get_x_max()) && (x >= 0) && (y < get_y_max()) && (y >= 0)
       @tabletop[x][y]
     else
       nil
