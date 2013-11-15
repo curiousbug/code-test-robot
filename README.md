@@ -29,5 +29,10 @@ Please see the below list for details about the various test data files
 
 #### Issues & Further Learning
 
-How do you decouple functions that seem to be reliant on each other without making things public just for testing?  
+1. How do you decouple functions that seem to be reliant on each other without making things public just for testing?  
 Eg. robot.place(), robot.report(). place() is best tested by running a report(), report is best tested by running a place().
+
+1. Bundler and Gemfiles seem to be a really cool system for verifying
+installing an environment to run your app in. Have to look into this more.
+
+1. Have to check out the Test::Unit and compare contrast with RSpec. Is there any particular one that is 'more' populer/used in general?
