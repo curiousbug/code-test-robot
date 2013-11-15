@@ -1,3 +1,3 @@
-require_relative 'run_robot'
+require_relative 'lib/run_robot'
 
 robot_runner = RunRobot.new
