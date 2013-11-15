@@ -9,6 +9,8 @@ Problem description can be found in CodeTest-Robot.pdf
 Ruby 1.9.3  
 RSpec 2.14.7  
 
+'bundle install' is your friend. 
+
 #### Instructions
 
 To see the code run:
